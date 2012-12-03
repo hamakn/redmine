@@ -1,6 +1,7 @@
 # Load the rails application
 require File.expand_path('../application', __FILE__)
 
+FileUtils.rm_rf(File.join(Rails.root, "vendor", "plugins", "serve_static_assets"))
 # Make sure there's no plugin in vendor/plugin before starting
 vendor_plugins_dir = File.join(Rails.root, "vendor", "plugins")
 if Dir.glob(File.join(vendor_plugins_dir, "*")).any?
