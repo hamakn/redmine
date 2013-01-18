@@ -3,6 +3,8 @@ require File.expand_path('../application', __FILE__)
 
 # remove dir created by vcap-staigng
 FileUtils.rm_rf(File.join(Rails.root, "vendor", "plugins", "configure_assets"))
+# for old vcap-staging https://github.com/cloudfoundry/vcap-staging/commit/65b7feb3#L1R106
+FileUtils.rm_rf(File.join(Rails.root, "vendor", "plugins", "serve_static_assets"))
 
 # Make sure there's no plugin in vendor/plugin before starting
 vendor_plugins_dir = File.join(Rails.root, "vendor", "plugins")
